@@ -69,6 +69,12 @@
 @media (max-width: 760px) {
   .header { margin-left: 0; }
 }
+
+.updated {
+  margin-top: 60px;
+  color: #aaa;
+  font-size: 0.85em;
+}
 </style>
 
 </head>
@@ -220,6 +226,13 @@
   const user = "samuel.luethi";     // part before the @
   const domain = "skbf-csre.ch";  // part after the @
   document.getElementById("email").href = "mailto:" + user + "@" + domain;
+</script>
+
+<p class="updated">Last updated: <span id="updated"></span></p>
+<script>
+  document.getElementById("updated").textContent =
+    new Date(document.lastModified).toLocaleDateString("en-GB",
+      { day: "numeric", month: "long", year: "numeric" });
 </script>
 
 </body>
